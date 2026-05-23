@@ -34,7 +34,17 @@
     <main>
         <img src="images/pics/home-puppet.jpg" class="page-bg page-bg--left" alt="" aria-hidden="true">
         <h1>Blog</h1>
-        <p>Occasional writings about things I find interesting. &nbsp;[ <a href="feed.xml">RSS</a> ]</p>
+        <p>Occasional writings about things I find interesting. &nbsp;[ <a href="feed.xml" id="rss-link">RSS</a> ]</p>
+        <div class="rss-popup" id="rss-popup">copied!</div>
+        <script>
+            document.getElementById('rss-link').addEventListener('click', function(e) {
+                e.preventDefault();
+                navigator.clipboard.writeText('https://saintstone24.github.io/feed.xml');
+                var p = document.getElementById('rss-popup');
+                p.classList.add('visible');
+                setTimeout(function() { p.classList.remove('visible'); }, 1500);
+            });
+        </script>
 
         <article class="post-entry">
             <p class="post-date">2026-05-22</p>

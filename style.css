@@ -294,3 +294,23 @@ main {
     border: 1px solid var(--muted);
     display: block;
 }
+
+
+/* --- RSS COPY POPUP ---------------------------------------- */
+.rss-popup {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--fg);
+    color: var(--bg);
+    padding: 0.4rem 1rem;
+    border: 2px solid var(--fg);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s;
+}
+
+.rss-popup.visible {
+    opacity: 1;
+}
