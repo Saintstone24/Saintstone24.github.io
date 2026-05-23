@@ -1,0 +1,296 @@
+/* =============================================================
+   STYLE.CSS — shared styles for every page on this site
+   Color palette: Gruvbox Light (https://github.com/morhetz/gruvbox)
+   ============================================================= */
+
+
+/* --- COLOR VARIABLES --------------------------------------- */
+:root {
+    --bg:       #fbf1c7;  /* page background: warm off-white  */
+    --fg:       #3c3836;  /* main text: dark brown            */
+    --link:     #076678;  /* links: teal/blue                 */
+    --link-bg:  #3c3836;  /* link hover: inverted background  */
+    --link-fg:  #fbf1c7;  /* link hover: inverted text        */
+    --muted:    #d5c4a1;  /* borders, dividers: light tan     */
+    --green:    #79740e;  /* blockquotes, dates: olive green  */
+    --red:      #9d0006;  /* snake: dark red                  */
+}
+
+
+/* --- BASE -------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Reserve scrollbar space so layout stays stable across pages with/without scroll */
+html {
+    scrollbar-gutter: stable;
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    background-color: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    max-width: 800px;   /* keeps lines readable; wider feels like a document */
+    margin: 0 auto;     /* centers the content block on wide screens */
+    padding: 2rem;
+    font-size: 16px;
+}
+
+
+/* --- TYPOGRAPHY -------------------------------------------- */
+h1, h2, h3 {
+    font-weight: normal;  /* bold headings feel too "web 2.0" */
+    margin-top: 2rem;
+}
+
+h1 {
+    border-bottom: 2px dashed var(--fg);
+    padding-bottom: 0.5rem;
+}
+
+/* ">" prefix on every h2 — like a terminal prompt */
+h2::before {
+    content: "> ";
+    color: var(--link);
+}
+
+ul {
+    list-style-type: square;  /* filled square bullets, more retro than circles */
+}
+
+blockquote {
+    border-left: 4px solid var(--green);
+    margin: 1.5rem 0;
+    padding-left: 1rem;
+    font-style: italic;
+}
+
+
+/* --- LINKS ------------------------------------------------- */
+a {
+    color: var(--link);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* Inverted block on hover — mimics a terminal text cursor */
+a:hover {
+    background-color: var(--link-bg);
+    color: var(--link-fg);
+    text-decoration: none;
+}
+
+
+/* --- DIVIDERS & FOOTER ------------------------------------ */
+hr {
+    border: 0;
+    border-bottom: 1px dashed var(--muted);
+    margin: 2rem 0;
+}
+
+
+/* --- ASCII ART --------------------------------------------- */
+.ascii-art {
+    white-space: pre;
+    overflow-x: auto;
+    font-size: 12px;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+}
+
+
+/* --- NAVIGATION -------------------------------------------- */
+nav {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+.nav-container {
+    position: relative;
+    overflow: hidden;
+    padding-top: 1.5rem;
+}
+
+
+/* --- SNAKE ANIMATION (pure CSS, zero JavaScript) ----------- */
+.snake {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    font-size: 14px;
+    white-space: nowrap;
+    color: var(--red);
+    animation: slither 15s linear infinite;
+}
+
+@keyframes slither {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(calc(100vw + 200px)); }
+}
+
+
+
+/* --- PHOTOS PAGE ------------------------------------------- */
+figure.photo {
+    margin: 2.5rem 0;
+}
+
+figure.photo img {
+    max-width: 100%;   /* never overflow the container */
+    display: block;    /* removes the small gap below images */
+    border: 2px solid var(--muted);
+}
+
+figure.photo figcaption {
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    padding-left: 0.75rem;
+    border-left: 3px solid var(--green);
+}
+
+
+/* --- BLOG INDEX PAGE --------------------------------------- */
+.post-entry {
+    margin: 2rem 0;
+    padding-bottom: 2rem;
+    border-bottom: 1px dashed var(--muted);
+}
+
+.post-entry:last-child {
+    border-bottom: none;
+}
+
+.post-date {
+    color: var(--green);
+    font-size: 0.9rem;
+    margin: 0 0 0.25rem;
+}
+
+.post-entry h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.1rem;
+}
+
+
+/* --- BLOG POST PAGE ---------------------------------------- */
+.post-header {
+    margin-bottom: 2rem;
+}
+
+.post-content p {
+    margin: 1rem 0;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+
+/* --- POETRY PAGE ------------------------------------------- */
+.poem {
+    white-space: pre-wrap;
+    line-height: 1.9;
+    margin: 2rem 0;
+}
+
+
+/* --- LANGUAGE SWITCHER ------------------------------------- */
+.lang-switcher {
+    text-align: right;
+    font-size: 0.8rem;
+    margin-bottom: 0.25rem;
+    letter-spacing: 0.05em;
+}
+
+.lang-current {
+    font-weight: bold;
+    color: var(--fg);
+}
+
+.lang-missing {
+    color: var(--muted);
+}
+
+/* "[en]" inline label shown after a nav link that switches language */
+.lang-tag {
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-weight: normal;
+    margin-left: 0.1rem;
+}
+
+
+/* --- PAGE BACKGROUND IMAGES -------------------------------- */
+main {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+#intro {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.biopic-bg,
+.page-bg {
+    position: absolute;
+    height: auto;
+    opacity: 0.15;
+    filter: grayscale(100%);
+    pointer-events: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.biopic-bg {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 58%;
+}
+
+.page-bg--right {
+    top: 12%;
+    right: 0;
+    width: 50%;
+}
+
+.page-bg--left {
+    top: 12%;
+    left: 0;
+    width: 50%;
+}
+
+
+/* --- CONSTELLATION FOOTER ICON ----------------------------- */
+.constellation-icon {
+    float: right;
+    width: 34px;
+    height: 34px;
+    opacity: 0.38;
+    margin: 0 0 0.5rem 1rem;
+}
+
+
+/* --- BOOKSHELF --------------------------------------------- */
+/* A horizontal row of small book cover images */
+.bookshelf {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin: 1rem 0;
+    align-items: flex-end;
+}
+
+.bookshelf img {
+    height: 90px;
+    width: auto;
+    border: 1px solid var(--muted);
+    display: block;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Tommaso Pietrosanti.">
+    <title>Projects — Tommaso Pietrosanti</title>
+    <link rel="icon" href="images/aquarius.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="nav-container">
+        <div class="snake">~/\_/\_/\_/(o.o)&gt;</div>
+
+        <!-- No Italian or German version of this page yet -->
+        <div class="lang-switcher">
+            <span class="lang-current">en</span> /
+            <span class="lang-missing">it</span> /
+            <span class="lang-missing">de</span>
+        </div>
+
+        <nav>
+            [ <a href="index.html">Home</a> ] &nbsp;
+            [ <a href="photos.html">Photos</a> ] &nbsp;
+            [ <a href="poetry.html">Poetry</a> ] &nbsp;
+            [ <a href="blog.html">Blog</a> ] &nbsp;
+            [ <a href="projects.html">Projects</a> ] &nbsp;
+            [ <a href="mailto:saintstone.t@gmail.com">Contact</a> ]
+        </nav>
+    </div>
+
+    <main>
+        <img src="images/pics/statue-snippet.jpg" class="page-bg page-bg--left" alt="" aria-hidden="true">
+        <h1>Projects</h1>
+        <p>Things I have built or worked on.</p>
+
+        <article class="post-entry">
+            <p class="post-date">2026-01</p>
+            <h3>Image Classification and Regression on the SPQR RoboCup Dataset</h3>
+            <p>Built and tuned models to classify objects (robot, ball, goalpost, goalspot, centerspot) and predict bounding-box centers from images taken by a RoboCup soccer robot. Used transfer learning with RayTune-automated hyperparameter search for classification — AlexNet reached ~97% accuracy. For the regression task, designed custom CNNs and compared a single monolithic model against a class-specialized ensemble of five smaller networks; the ensemble achieved R² ≈ 0.75 and a mean pixel error of ~46px.</p>
+        </article>
+
+        <article class="post-entry">
+            <p class="post-date">2026-01</p>
+            <h3>N-Queens: A* and SAT Reduction in C++</h3>
+            <p>Implemented two independent solvers for the N-Queens problem in C++. The first uses A* search with a Min-Conflicts heuristic and a template-based architecture that decouples the search logic from the problem domain. The second reduces the problem to SAT in CNF form and delegates solving to MiniSAT. Benchmarks across increasing board sizes show the SAT approach scales orders of magnitude better than A*. The environment is containerized with Docker for reproducibility.</p>
+        </article>
+
+        <article class="post-entry">
+            <p class="post-date">2025-12</p>
+            <h3>Inverse Kinematics for Robot Arms via Machine Learning</h3>
+            <p>Trained models to learn differential inverse kinematics — given a small desired displacement of a robot arm's end effector, predict the required joint velocities — for three robots with 3, 4, and 6 revolute joints. Compared KNN, SVR, Random Forest, feedforward neural networks, and a Mixture of Experts approach, also exploring physics-informed loss and feature space manipulation. Feedforward networks generally performed best, though SVR was competitive on the 4-joint robot.</p>
+        </article>
+
+    </main>
+
+    <hr>
+    <footer>
+        <img src="images/aquarius.svg" class="constellation-icon" alt="" aria-hidden="true">
+        <p><small>&copy; 2026 Tommaso Pietrosanti. Last updated: May 2026.</small></p>
+    </footer>
+
+</body>
+</html>

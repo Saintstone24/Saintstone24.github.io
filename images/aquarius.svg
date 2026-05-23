@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 72 72">
+  <title>Aquarius</title>
+  <desc>Aquarius constellation — the water-bearer</desc>
+  <!-- Constellation lines -->
+  <g stroke="#076678" stroke-width="0.75" fill="none"
+     stroke-linecap="round" stroke-linejoin="round" opacity="0.55">
+    <!-- Shoulders: ε → β → α -->
+    <polyline points="14,20 34,13 52,9"/>
+    <!-- Right arm: α → γ → ζ (water jar) -->
+    <line x1="52" y1="9"  x2="56" y2="23"/>
+    <line x1="56" y1="23" x2="45" y2="30"/>
+    <!-- Body to jar: β → ζ -->
+    <line x1="34" y1="13" x2="45" y2="30"/>
+    <!-- Jar asterism -->
+    <polyline points="38,24 45,30 52,26"/>
+    <!-- Left side down to water: ε → stream start -->
+    <line x1="14" y1="20" x2="18" y2="40"/>
+    <!-- Water stream 1 (upper zigzag) -->
+    <polyline points="18,40 26,36 35,42 44,38 53,42 61,38"/>
+    <!-- Water stream 2 (lower zigzag) -->
+    <polyline points="14,53 22,49 31,54 40,50 49,54 57,50"/>
+  </g>
+  <!-- Stars -->
+  <g fill="#076678">
+    <circle cx="34" cy="13" r="2.5"/>  <!-- β Sadalsuud — brightest -->
+    <circle cx="52" cy="9"  r="2.0"/>  <!-- α Sadalmelik -->
+    <circle cx="14" cy="20" r="1.8"/>  <!-- ε Albali -->
+    <circle cx="56" cy="23" r="1.7"/>  <!-- γ Sadachbia -->
+    <circle cx="38" cy="24" r="1.4"/>
+    <circle cx="45" cy="30" r="1.7"/>  <!-- ζ — water jar centre -->
+    <circle cx="52" cy="26" r="1.4"/>
+    <circle cx="18" cy="40" r="1.3"/>
+    <circle cx="26" cy="36" r="1.2"/>
+    <circle cx="35" cy="42" r="1.2"/>
+    <circle cx="44" cy="38" r="1.2"/>
+    <circle cx="53" cy="42" r="1.2"/>
+    <circle cx="61" cy="38" r="1.2"/>
+    <circle cx="14" cy="53" r="1.1"/>
+    <circle cx="22" cy="49" r="1.1"/>
+    <circle cx="31" cy="54" r="1.1"/>
+    <circle cx="40" cy="50" r="1.1"/>
+    <circle cx="49" cy="54" r="1.1"/>
+    <circle cx="57" cy="50" r="1.1"/>
+  </g>
+</svg>

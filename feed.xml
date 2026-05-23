@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    RSS 2.0 feed.
+    Add a new <item> block at the TOP of the list every time you publish a post.
+-->
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Tommaso Pietrosanti</title>
+        <link>https://Saintstone24.github.io</link>
+        <description>Occasional writings by Tommaso Pietrosanti.</description>
+        <language>en</language>
+        <atom:link href="https://Saintstone24.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+
+        <item>
+            <title>Come attivare lo SPID [it]</title>
+            <link>https://Saintstone24.github.io/posts/guida-spid.html</link>
+            <description>Cos'è lo SPID, a cosa serve e come si attiva passo per passo — documenti necessari, scelta del provider, fase di riconoscimento, e alternative come App IO e CIE.</description>
+            <pubDate>Thu, 22 May 2026 00:00:00 +0000</pubDate>
+            <guid>https://Saintstone24.github.io/posts/guida-spid.html</guid>
+        </item>
+
+    </channel>
+</rss>
