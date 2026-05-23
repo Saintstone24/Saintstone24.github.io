@@ -25,6 +25,7 @@
 /* Reserve scrollbar space so layout stays stable across pages with/without scroll */
 html {
     scrollbar-gutter: stable;
+    overflow-x: hidden; /* clamp horizontal bleed from background images on narrow viewports */
 }
 
 body {
@@ -227,7 +228,8 @@ figure.photo figcaption {
 /* --- PAGE BACKGROUND IMAGES -------------------------------- */
 main {
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden removed — images are allowed to bleed left/right into the
+       outer viewport margin on wide screens; html { overflow-x: hidden } clamps it. */
     isolation: isolate;
 }
 
@@ -237,6 +239,20 @@ main {
     isolation: isolate;
 }
 
+/* Decorative scattered background images — placed as direct children of <main>.
+   Negative right/left values push them partly into the outer viewport margin on
+   screens wider than 800 px. Per-image placement is set via inline style. */
+.bg-scatter {
+    position: absolute;
+    height: auto;
+    opacity: 0.22;
+    filter: grayscale(100%);
+    pointer-events: none;
+    user-select: none;
+    z-index: -1;
+}
+
+/* Legacy classes kept for any existing uses */
 .biopic-bg,
 .page-bg {
     position: absolute;
@@ -246,13 +262,6 @@ main {
     pointer-events: none;
     user-select: none;
     z-index: -1;
-}
-
-.biopic-bg {
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 58%;
 }
 
 .page-bg--right {
