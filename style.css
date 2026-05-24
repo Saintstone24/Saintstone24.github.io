@@ -14,6 +14,7 @@
     --muted:    #d5c4a1;  /* borders, dividers: light tan     */
     --green:    #79740e;  /* blockquotes, dates: olive green  */
     --red:      #9d0006;  /* snake: dark red                  */
+    --comment:  #928374;  /* editorial annotations: gruvbox gray */
 }
 
 
@@ -302,6 +303,14 @@ main {
     width: auto;
     border: 1px solid var(--muted);
     display: block;
+}
+
+
+/* --- EDITORIAL ANNOTATIONS -------------------------------- */
+.note {
+    color: var(--comment);
+    font-style: italic;
+    font-size: 0.88rem;
 }
 
 
